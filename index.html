@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta name="Viewport" content="width=device-width initial-scale=1.0">
+    <title>Rock Paper Scissors game</title>
+</head>
+<body>
+    <script>
+    
+    let computerPlay = () => {
+        let chooser = Math.floor(Math.random() * 3)
+        return (chooser == 0) ? "ROCK" : (chooser == 1) ? "PAPER" : "SCISSORS";
+    }
+    
+    let playRound = (playerChoice) => {
+       playerChoice = playerChoice.toUpperCase();
+       let comSel = computerPlay();
+
+       switch (playerChoice){
+           case comSel:
+           
+            return "Draw"
+            break
+            
+            case "SCISSORS":
+           
+            return (comSel == "ROCK") ? "You lose! Rock beat Scissors" : "You win! Scissors beat paper"
+            break
+
+            case "ROCK":
+           
+            return (comSel == "PAPER") ? "You lose! Paper beat Rock" : "You win! Rock beat Scissors"
+            break
+            
+            case "PAPER":
+   
+            return (comSel == "SCISSORS") ? "You lose! Scissors beat paper" : "You win! Paper beat the rock"
+            break
+
+            
+       }
+    }
+    let game = () => {
+        for (i = 0; i < 5 ; i++){
+        playerChoice = prompt("Please enter your type 'SCISSORS or PAPER or ROCK'")
+         console.log(playRound(playerChoice))
+        }
+    }
+    </script>
+</body>
+    </html>
